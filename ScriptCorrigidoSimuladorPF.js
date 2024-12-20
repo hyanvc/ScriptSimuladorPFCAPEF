@@ -22,11 +22,11 @@ $(document).ready(function(){
 
         if($("#nometitular").val().trim() === ''){ alert('O nome do titular precisa ser preenchido'); return false; };
         if($("#birthday").val().trim() === ''){ alert('A data de nascimento precisa ser preenchida'); return false; };
-        if(!checkBRDate($("#birthday").val() )){ alert('VocÃª precisa digitar uma data vÃ¡lida para prosseguir'); return false; };
+        if(!checkBRDate($("#birthday").val() )){ alert('Você precisa digitar uma data vÃ¡lida para prosseguir'); return false; };
         if($("#nomecontato").val().trim() === ''){ alert('O nome do contato precisa ser preenchido'); return false; };
-        if($("#phone").val().trim() === '' && $("#email").val().trim() === '' ){ alert('VocÃª precisa fornecer telefone ou email para prosseguir'); return false; };
-        if($("#phone").val().trim() != '' && !checkTelefone($("#phone").val() )){ alert('VocÃª precisa digitar um telefone vÃ¡lido'); return false; };
-        if($("#email").val().trim() != '' && !checkEmail($("#email").val() )){ alert('VocÃª precisa digitar um email vÃ¡lido'); return false; };
+        if($("#phone").val().trim() === '' && $("#email").val().trim() === '' ){ alert('Você precisa fornecer telefone ou email para prosseguir'); return false; };
+        if($("#phone").val().trim() != '' && !checkTelefone($("#phone").val() )){ alert('Você precisa digitar um telefone vÃ¡lido'); return false; };
+        if($("#email").val().trim() != '' && !checkEmail($("#email").val() )){ alert('Você precisa digitar um email vÃ¡lido'); return false; };
 
         //console.log('valid');
         $(".modal-slide-04").css("display", "none");
@@ -46,18 +46,18 @@ $(document).ready(function(){
         var limite = 1376;
 
         // validaÃ§Ã£o
-        if($("#opcao").val().trim() === ''){ alert('VocÃª precisa escolher uma opÃ§Ã£o'); return false; };
-        if($("#valor").val().trim() === ''){ alert('VocÃª precisa escolher um valor'); return false; };
-        if( parsePotentiallyGroupedFloat($("#valor").val()) < 100 ){ alert('O valor de contribuiÃ§Ã£o mÃ­nimo Ã© R$ 100,00'); return false; };
-        // if($("#idadeaposentadoria").val().trim() === ''){ alert('VocÃª precisa escolher uma idade para aposentadoria'); return false; };
+        if($("#opcao").val().trim() === ''){ alert('Você precisa escolher uma opção'); return false; };
+        if($("#valor").val().trim() === ''){ alert('Você precisa escolher um valor'); return false; };
+        if( parsePotentiallyGroupedFloat($("#valor").val()) < 100 ){ alert('O valor de contribuição mÃ­nimo Ã© R$ 100,00'); return false; };
+        // if($("#idadeaposentadoria").val().trim() === ''){ alert('Você precisa escolher uma idade para aposentadoria'); return false; };
         // if($("#idadeaposentadoria").val()< 50 ){ alert('A idade mÃ­nima para aposentadoria Ã© de 50 anos'); return false; };
-        if($("#tempoinvestimento").val().trim() === ''){ alert('VocÃª precisa escolher um tempo de investimento'); return false; };
+        if($("#tempoinvestimento").val().trim() === ''){ alert('Você precisa escolher um tempo de investimento'); return false; };
         if($("#tempoinvestimento").val()< 1 ){ alert('O tempo de investimento mÃ­nimo Ã© de um ano'); return false; };
-        if($("#prazorecebimento").val().trim() === ''){ alert('VocÃª precisa escolher um prazo para recebimento'); return false; };
+        if($("#prazorecebimento").val().trim() === ''){ alert('Você precisa escolher um prazo para recebimento'); return false; };
         if($("#prazorecebimento").val()< 5 ){ alert('O prazo mÃ­nimo para recebimento Ã© de 5 anos'); return false; };
         if($("#prazorecebimento").val()> 50 ){ alert('O prazo mÃ¡ximo para recebimento Ã© de 50 anos'); return false; };
-        if($("#desejaaumentar").val().trim() === ''){ alert('VocÃª precisa escolher uma opÃ§Ã£o em relaÃ§Ã£o a aportes'); return false; };
-        if($("#desejaaumentar").val() != '0' && $("#valoraporte").val().trim() === ''){ alert('VocÃª nÃ£o declarou um valor de aporte'); return false; };
+        if($("#desejaaumentar").val().trim() === ''){ alert('Você precisa escolher uma opção em relação a aportes'); return false; };
+        if($("#desejaaumentar").val() != '0' && $("#valoraporte").val().trim() === ''){ alert('Você Não declarou um valor de aporte'); return false; };
         
         if(!verificaElegibilidade($("#birthday").val(),$("#tempoinvestimento").val())) { return false; }
 
@@ -575,7 +575,7 @@ $(document).ready(function(){
         // Obter o valor do campo "telefone"
         var telefone = fone;
 
-        // Remover caracteres nÃ£o numÃ©ricos
+        // Remover caracteres Não numÃ©ricos
         var numeroLimpo = telefone.replace(/\D/g, '');
 
         // Verificar se o nÃºmero possui 11 dÃ­gitos (celular) ou 10 dÃ­gitos (fixo)
@@ -744,7 +744,7 @@ $(document).ready(function(){
 
     function calcularNPV(taxaDesconto, fluxoDeCaixa) {
         if (!Array.isArray(fluxoDeCaixa) || fluxoDeCaixa.length === 0) {
-            return "O fluxo de caixa deve ser uma matriz nÃ£o vazia.";
+            return "O fluxo de caixa deve ser uma matriz Não vazia.";
         }
 
         let npv = 0;
@@ -758,7 +758,7 @@ $(document).ready(function(){
 
 
     function obterSaldoplanofamiliaUltimaLinha(meses) {
-        // Verifica se o array nÃ£o estÃ¡ vazio
+        // Verifica se o array Não estÃ¡ vazio
         if (meses.length > 0) {
             // ObtÃ©m a Ãºltima linha do array
             const ultimaLinha = meses[meses.length - 1];
@@ -779,7 +779,7 @@ $(document).ready(function(){
     }
    
     function obterSaldoplanofamiliaTempUltimaLinha(meses) {
-        // Verifica se o array nÃ£o estÃ¡ vazio
+        // Verifica se o array Não estÃ¡ vazio
         if (meses.length > 0) {
             // ObtÃ©m a Ãºltima linha do array
             const ultimaLinha = meses[meses.length - 1];
@@ -800,7 +800,7 @@ $(document).ready(function(){
     }
 
     function obterSaldoplanomercadoUltimaLinha(meses) {
-        // Verifica se o array nÃ£o estÃ¡ vazio
+        // Verifica se o array Não estÃ¡ vazio
         if (meses.length > 0) {
             // ObtÃ©m a Ãºltima linha do array
             const ultimaLinha = meses[meses.length - 1];
@@ -821,7 +821,7 @@ $(document).ready(function(){
     }
 
     function obterSaldocdiUltimaLinha(meses) {
-        // Verifica se o array nÃ£o estÃ¡ vazio
+        // Verifica se o array Não estÃ¡ vazio
         if (meses.length > 0) {
             // ObtÃ©m a Ãºltima linha do array
             const ultimaLinha = meses[meses.length - 1];
@@ -842,7 +842,7 @@ $(document).ready(function(){
     }
 
     function obterSaldopoupancaUltimaLinha(meses) {
-        // Verifica se o array nÃ£o estÃ¡ vazio
+        // Verifica se o array Não estÃ¡ vazio
         if (meses.length > 0) {
             // ObtÃ©m a Ãºltima linha do array
             const ultimaLinha = meses[meses.length - 1];
@@ -911,7 +911,7 @@ $(document).ready(function(){
             {label: 'CDI',
             data: dataset3,
             borderWidth: 1},
-            {label: 'PoupanÃ§a',
+            {label: 'Poupança',
             data: dataset4,
             borderWidth: 1},
         ]
@@ -947,7 +947,7 @@ $(document).ready(function(){
         const dataAmericana = `${partes[2]}-${partes[1]}-${partes[0]}`;
         return dataAmericana;
     } else {
-        // Retorna null se a string de data nÃ£o estiver no formato esperado
+        // Retorna null se a string de data Não estiver no formato esperado
         return null;
     }
     }
@@ -1087,7 +1087,7 @@ $(document).ready(function(){
 
             if(soma < 50){
                 eligibilidadealertada = true;
-                return confirm('A regra de elegibilidade para recebimento de renda mensal de aposentadoria Ã© de no mÃ­nimo 50 anos de idade e 12 meses de contribuiÃ§Ã£o ao Plano. Deseja prosseguir mesmo assim?');
+                return confirm('A regra de elegibilidade para recebimento de renda mensal de aposentadoria Ã© de no mÃ­nimo 50 anos de idade e 12 meses de contribuição ao Plano. Deseja prosseguir mesmo assim?');
             } else {
                 return true;
             }
@@ -1131,7 +1131,7 @@ $(document).ready(function(){
     $("#opcao").on('change', function() {
     
         if($(this).val() == 'C'){
-            $("#labelvalor").html('Qual o valor da contribuiÃ§Ã£o mensal?');
+            $("#labelvalor").html('Qual o valor da contribuição mensal?');
         } else {
             $("#labelvalor").html('Qual valor de renda desejada?');
         }
@@ -1145,7 +1145,7 @@ $(document).ready(function(){
 
     function trataPercentualdeSaque(){
         $("#percentualdesaque").empty();
-        $("#percentualdesaque").prepend("<option value='' selected>Escolha uma das opÃ§Ãµes</option>");  
+        $("#percentualdesaque").prepend("<option value='' selected>Escolha uma das opções</option>");  
         $("#percentualdesaque").prepend("<option value='0'>0%</option>");  
         $("#percentualdesaque").prepend("<option value='05'>5%</option>");  
         $("#percentualdesaque").prepend("<option value='10'>10%</option>");  
@@ -1173,7 +1173,7 @@ $(document).ready(function(){
         if(prazototal > parseInt($("#tempoinvestimento").val())){
             $("#prazobeneficiotemporario").val($("#prazobeneficiotemporario option:first").val());
             $("#tempoderecebimento").val($("#tempoderecebimento option:first").val());
-            alert('A soma de de Prazo para BenefÃ­cio TemporÃ¡rio + Tempo de Recebimento para o BenefÃ­cio temporÃ¡rio nÃ£o pode ser superior ao Tempo de Investimento');
+            alert('A soma de de Prazo para BenefÃ­cio TemporÃ¡rio + Tempo de Recebimento para o BenefÃ­cio temporÃ¡rio Não pode ser superior ao Tempo de Investimento');
             return false;
         } else {
             return true;
@@ -1184,8 +1184,8 @@ $(document).ready(function(){
 
     function remontaPrazoResgate(){
         $("#prazoresgate").empty();
-        $("#prazoresgate").prepend("<option value='' selected>Escolha uma das opÃ§Ãµes</option>");  
-        $("#prazoresgate").prepend("<option value='0'>NÃ£o</option>");  
+        $("#prazoresgate").prepend("<option value='' selected>Escolha uma das opções</option>");  
+        $("#prazoresgate").prepend("<option value='0'>Não</option>");  
 
         var maximo = parseInt($("#tempoinvestimento").val());
         var minimo = 3;
@@ -1197,8 +1197,8 @@ $(document).ready(function(){
 
     function remontaPrazoBeneficioTemporario(){
         $("#prazobeneficiotemporario").empty();
-        $("#prazobeneficiotemporario").prepend("<option value='' selected>Escolha uma das opÃ§Ãµes</option>");  
-        $("#prazobeneficiotemporario").prepend("<option value='0'>NÃ£o</option>");  
+        $("#prazobeneficiotemporario").prepend("<option value='' selected>Escolha uma das opções</option>");  
+        $("#prazobeneficiotemporario").prepend("<option value='0'>opções</option>");  
 
         var maximo = parseInt($("#tempoinvestimento").val()) -2;
         var minimo = 5;
@@ -1226,7 +1226,7 @@ $(document).ready(function(){
         const celulaSaldoPlanoFamilia2 = linhaCabecalho.insertCell();
         celulaMes.textContent = "MÃªs";
         celulaFase.textContent = "Fase";
-        celulaContribuicao.textContent = "ContribuiÃ§Ã£o";
+        celulaContribuicao.textContent = "contribuição";
         celulaAporte.textContent = "Aporte";
         celulaBeneficio.textContent = "Beneficio";
         celulaSaldoPlanoFamilia.textContent = "Saldo Plano FamÃ­lia";
